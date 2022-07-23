@@ -52,7 +52,7 @@ export function download(id, filename) {
             break;
         }
     }
-    let style = document.createElementNS('http://www.w3.org/2000/svg', 'style');
+    let style = document.createElementNS('https://www.w3.org/2000/svg', 'style');
     style.type = "text/css";
     let css = "";
     for (let i = 0; i < styleSheet.rules.length; i++) {

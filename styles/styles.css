@@ -5,20 +5,42 @@
       margin-right: auto;
       width: 50%;
     }
+
   
     .topbar {
+        font-size: 30px;
+        text-align: center;
+        color:white;
         top: 0;
         left: 0;
         height: 100px;
         width:100%;
         position:fixed;
-        background-color:dimgray
+        background-color:rgb(80, 80, 80)
+    }
+
+    .leftWolverine {
+        float:left; 
+        clear: none;
+        margin-left: 10px;  
+    }
+
+    .rightWolverine {
+      float: right; 
+      clear: none;
+      margin-left: 10px;  
+  }
+
+    .titletext {
+        width=100%
+        position: relative;
+        text-align: center;
     }
 
     .credit {
        bottom: 10px;
        right: 10px;
-       position: absolute;
+       position: fixed;
     }
 
     .sidebar {

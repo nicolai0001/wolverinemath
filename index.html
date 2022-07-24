@@ -109,18 +109,18 @@ if ((host == window.location.host) && (window.location.protocol != "https:"))
     </style>
 
     <!-- STYLESHEET -->
-    <link rel="stylesheet" href="/math-club/scripts/vectorjs/css/library.css">
+    <link rel="stylesheet" href="./scripts/vectorjs/css/library.css">
 
     <!-- CURRENT INTERACTIVE -->
     <div id="unit-circle">
       <script type="module">
-        import main from "/math-club/scripts/vectorjs/dist/examples/math/unit-circle.js";
+        import main from "./scripts/vectorjs/dist/examples/math/unit-circle.js";
         main("unit-circle");
       </script>
     </div>
 
     <script type="module">
-      import { download } from '/math-club/scripts/vectorjs//dist/util/file.js';
+      import { download } from './scripts/vectorjs//dist/util/file.js';
 
       // add a save function to the window to save the current interactive
       window.save = function() {

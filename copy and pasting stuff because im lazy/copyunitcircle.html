@@ -6,6 +6,7 @@
     <title>Examples</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
+  
   <body>
 
     <style>
@@ -18,18 +19,18 @@
     </style>
 
     <!-- STYLESHEET -->
-    <link rel="stylesheet" href="/scripts/vectorjs/css/library.css">
+    <link rel="stylesheet" href="./scripts/vectorjs/css/library.css">
 
     <!-- CURRENT INTERACTIVE -->
     <div id="unit-circle">
       <script type="module">
-        import main from "/scripts/vectorjs/dist/examples/math/unit-circle.js";
+        import main from "./scripts/vectorjs/dist/examples/math/unit-circle.js";
         main("unit-circle");
       </script>
     </div>
 
     <script type="module">
-      import { download } from '/scripts/vectorjs//dist/util/file.js';
+      import { download } from './scripts/vectorjs//dist/util/file.js';
 
       // add a save function to the window to save the current interactive
       window.save = function() {
@@ -42,4 +43,6 @@
       }
     </script>
   </body>
+  
+  
 </html>

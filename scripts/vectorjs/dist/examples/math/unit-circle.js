@@ -7,7 +7,7 @@
 * @weight 1
 */
 import { Interactive, BaseElement } from '../../index.js';
-import { parseSVG } from '../../util/svg.js';
+import { parseSVG } from 'math-club/scripts/vectorjs/dist/util/svg.js';
 /**
 * This wrapper object is how the circular dependecy between control elements is
 * made more simple. Since all of the elements depend on the current angle when

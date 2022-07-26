@@ -52,12 +52,12 @@ export default function main(id, opts) {
         func: Math.cos
     };
     let interactive = new Interactive(id);
-    let width = 230;
-    let scale = width / Math.PI;
+    let width = 400;
+    let scale = (8/9)*width / Math.PI;
     let radius = scale;
     let margin = 2 * radius - width / 2;
     interactive.height = width + margin + width;
-    interactive.width = width + margin + 2 * width + 2;
+    interactive.width = margin + 2 * width + 2;
     let f = Math.cos;
     /**
     * This angle is the main element that most of the control
@@ -78,7 +78,7 @@ export default function main(id, opts) {
     * Displays the value of the variables and a button for
     * animating the interactive.
     */
-    let info = interactive.interactive(0, width + margin);
+    let info = interactive.interactive(width + margin, 0);
     info.width = width;
     info.height = width;
     // TODO: setting the border to true doesn't work?
@@ -109,12 +109,14 @@ export default function main(id, opts) {
         this.x2 = control.x;
         this.y2 = control.y;
     };
-       let cosineLeg = circleInteractive.line(0,0,circle.r,0);
+
+let cosineLeg = circleInteractive.line(0,0,circle.r,0);
     cosineLeg.addDependency(hypotenuse);
     cosineLeg.update = function () {
         this.x2 = hypotenuse.x2;
     };
     cosineLeg.style.stroke = '#ff0000';
+
     let sineLeg = circleInteractive.line(0,0,0,circle.r);
     sineLeg.addDependency(hypotenuse);
     sineLeg.update = function () {
@@ -135,12 +137,19 @@ export default function main(id, opts) {
         }
     }
     angle.value = 1;
-    // x-axis labels
-    interactive.text(circleInteractive.originX - radius - 4, circleInteractive.height + 20, '-1');
-    interactive.text(circleInteractive.originX - 0 - 4, circleInteractive.height + 20, '0');
-    interactive.text(circleInteractive.originX + radius - 4, circleInteractive.height + 20, '1');
+
+    //idk what im doing but i want to label important values
+    interactive.text(radius*(2+(11/15)) + radius/7, circleInteractive.height - radius*(1+(11/15)), '(1 , 0)')
+    interactive.text(radius/(2+(11/15)) + -radius/14, circleInteractive.height - radius*(1+(11/15)), '(-1 , 0)')
+    interactive.text(radius*2*(11/15) + radius/7, circleInteractive.height - radius*(2+(11/15)) - radius/7, '(0 , 1)')
+    interactive.text(radius*2*(11/15) + radius/7, circleInteractive.height - 4*radius/7, '(0 , -1)')
+    interactive.text(radius*(2+(11/15)) - 2*radius/7, circleInteractive.height - radius*(2+(11/15)), '(√2/2 , √2/2)')
+    interactive.text(radius/(2+(11/15)) + -radius/28, circleInteractive.height - radius*(2+(11/15)), '(-√2/2 , √2/2)')
+    interactive.text(radius/(2+(11/15)) + -radius/28, circleInteractive.height - 5*radius/7, '(-√2/2 , -√2/2)')
+    interactive.text(radius*(2+(11/15)) - 2*radius/7, circleInteractive.height - 5*radius/7, '(√2/2 , -√2/2)')
+
     // Info section
-    let x = 20;
+    let x = width/2 - 2*margin;
     let thetaDisplay = info.text(x, info.height * 1 / 5, "θ = ...");
     let xDisplay = info.text(x, info.height * 2 / 5, "cosθ = ...");
     xDisplay.style.stroke = '#ff0000';
@@ -159,9 +168,10 @@ export default function main(id, opts) {
     yDisplay.update = function () {
         yDisplay.contents = `sinθ = ${(-control.y / circle.r).toFixed(3)}`;
     };
+    
     let requestID = 0;
     let animating = false;
-    let animate = info.button(3 * x, info.height * 4 / 5, "animate");
+    let animate = info.button(x, info.height * 4 / 5, "animate");
     animate.onclick = function () {
         let step = function (timestamp) {
             angle.value += .01;

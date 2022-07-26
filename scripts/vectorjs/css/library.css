@@ -6,7 +6,7 @@
 }
 
 .border {
-  border: 1px solid grey;
+  border: 3px solid #f01c1c;
 }
 
 .input-container {
@@ -20,19 +20,20 @@ input.input {
   height: 2rem;
   padding-left: 8px;
   webkitAppearance: textfield;
-  border: 1px solid grey;
+  border: 3px solid #f01c1c;
   border-radius: 4px;
   font-size: 14px;
 }
 
 .interactive {
-  font-family: 'Helvetica Neue','Segoe UI','Helvetica','Arial', sans-serif;
+  font-family: comic sans ms;
   font-weight: normal;
-  font-feature-settings: "kern", "liga", "clig", "calt";
-  font-size: 1rem;
+  font-size: 16px;
   box-sizing: content-box;
   -webkit-font-smoothing: antialiased;
   user-select: none;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .interactive text,
@@ -59,8 +60,8 @@ line.default,
 path.default,
 polygon.default,
 rect.default {
-  stroke:#404040;
-  stroke-width:1px;
+  stroke:#f01c1c;
+  stroke-width:3px;
   fill:none;
 }
 
@@ -73,13 +74,13 @@ rect.default {
 }
 
 .control .point {
-  fill:#0366EE;
+  fill:#f01c1c;
   stroke:none;
 }
 
 .control .handle {
   fill:transparent;
-  stroke: #0366EE;
+  stroke: #f01c1c;
   stroke-width:2px;
   opacity:0;
 }
